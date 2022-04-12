@@ -4,7 +4,7 @@ import numpy as np
 import altair as alt
 import streamlit as st
 
-df=pd.read_csv("vgsales.csv")
+df=pd.read_csv("./vgsales.csv")
 
 st.title("How Nintendo plan for their future publishment of games?")
 st.write("\n\n")
