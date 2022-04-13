@@ -236,7 +236,7 @@ int_US_plat=US_plat.encode(
     tooltip=['Name:N','Platform:N','NA_Sales:N','Publisher:N']
 ).interactive()
 
-NA=((int_US+text_US_year)|(int_US_plat+text_US_plat)).resolve_scale(y='shared')
+NA=((int_US+text_US_year)|(int_US_plat+text_US_plat))
 
 # EU & year
 EU_year = alt.Chart(df).mark_point(filled=True,size=90,width=100).encode(
