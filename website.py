@@ -65,12 +65,12 @@ selectGenre=alt.selection_single(
     bind=alt.binding_select(options=orderr,name="Select Genres:  ")
 )
 
-colorCondition = alt.condition(selectGenre,alt.Color("Genre:N"),alt.value('lightgray'))
+colorCondition = alt.condition(selectGenre,alt.value(1),alt.value(0))
 
 NA_final = NA_line.add_selection(
     selectGenre
 ).encode(
-    color=colorCondition
+    opacity=colorCondition
 )
 
 ##EU
@@ -94,12 +94,12 @@ selectGenre=alt.selection_single(
     bind=alt.binding_select(options=orderr_EU,name="Select Genres:  ")
 )
 
-colorCondition = alt.condition(selectGenre,alt.Color("Genre:N"),alt.value('lightgray'))
+colorCondition = alt.condition(selectGenre,alt.value(1),alt.value(0))
 
 PAL_final = PAL_line.add_selection(
     selectGenre
 ).encode(
-    color=colorCondition
+    opacity=colorCondition
 )
 
 ##JP
@@ -123,12 +123,12 @@ selectGenre=alt.selection_single(
     bind=alt.binding_select(options=orderr_JP,name="Select Genres:  ")
 )
 
-colorCondition = alt.condition(selectGenre,alt.Color("Genre:N"),alt.value('lightgray'))
+colorCondition = alt.condition(selectGenre,alt.value(1),alt.value(0))
 
 JP_final = JP_line.add_selection(
     selectGenre
 ).encode(
-    color=colorCondition
+    opacity=colorCondition
 )
 
 ##other
@@ -152,12 +152,12 @@ selectGenre=alt.selection_single(
     bind=alt.binding_select(options=orderr_oth,name="Select Genres:  ")
 )
 
-colorCondition = alt.condition(selectGenre,alt.Color("Genre:N"),alt.value('lightgray'))
+colorCondition = alt.condition(selectGenre,alt.value(1),alt.value(0))
 
 Other_final = Other_line.add_selection(
     selectGenre
 ).encode(
-    color=colorCondition
+    opacity=colorCondition
 )
 
 region_list=['North America', 'Europe', 'Japan', 'Other']
@@ -376,3 +376,15 @@ st.write("\n\n")
 st.write("\n\n")
 st.write("\n\n")
 st.subheader("Finally, let's check out how users think and feel about their favorite games.")
+st.image("./word_cloud.jpg")
+st.markdown("From this word cloud, we can see many people mention 'story', 'graphic', 'character'. We can assume that these are some features that users care most about when playing games.")
+st.markdown("Some game names have high frequency of occurance including 'Zelda', 'Mario' and 'GTA', which are really popular among users.")
+st.markdown("'Multiplayer', 'friend' and other related words are also highly mentioned by users. It shows users' preferences of playing games with friends to some extent.")
+
+st.write("\n\n")
+st.write("\n\n")
+st.write("\n\n")
+st.subheader("Recommendation")
+st.markdown("Nintendo has good sales performances and good reputation among users. Especially for Mario and Zelda, Nintendo can continue working on new episodes of these game series.")
+st.markdown("Nintendo could try developing action-adventure games in the future because its sales performances is increaseing around the world.")
+st.markdown("Nintendo could also try adding multiplayer features in their new games.")
