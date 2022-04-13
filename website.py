@@ -53,6 +53,8 @@ line_NA = alt.Chart(df,width=800,height=400).transform_aggregate(
     x = alt.X('Year:N'),
     y = alt.Y('NA_Sales:Q', title='North America Sales (million $)'),
     color = alt.Color('Genre:N', title='Genre', sort=orderr)
+).transform_filter(
+    alt.FieldOneOfPredicate(field='Year', oneOf=['1980','1981','1982','1983','1984','1985','1986','1987','1988','1989','1990','1991','1992','1993','1994','1995','1996','1997','1998','1999','2000','2001', '2002','2003','2004', '2005','2006','2007', '2008','2009','2010', '2011', '2012','2013','2014','2015','2016','2017', '2018','2019','2020', '2021', '2022'])
 )
 
 NA_line = line_NA.encode(
@@ -82,6 +84,8 @@ line_EU = alt.Chart(df,width=800,height=400).transform_aggregate(
     x = alt.X('Year:N'),
     y = alt.Y('PAL_Sales:Q', title='Europe Sales (million $)'),
     color = alt.Color('Genre:N', title='Genre', sort=orderr_EU)
+).transform_filter(
+    alt.FieldOneOfPredicate(field='Year', oneOf=['1980','1981','1982','1983','1984','1985','1986','1987','1988','1989','1990','1991','1992','1993','1994','1995','1996','1997','1998','1999','2000','2001', '2002','2003','2004', '2005','2006','2007', '2008','2009','2010', '2011', '2012','2013','2014','2015','2016','2017', '2018','2019','2020', '2021', '2022'])
 )
 
 PAL_line = line_EU.encode(
@@ -111,6 +115,8 @@ line_JP = alt.Chart(df,width=800,height=400).transform_aggregate(
     x = alt.X('Year:N'),
     y = alt.Y('JP_Sales:Q', title='Japan Sales (million $)'),
     color = alt.Color('Genre:N', title='Genre', sort=orderr_JP)
+).transform_filter(
+    alt.FieldOneOfPredicate(field='Year', oneOf=['1980','1981','1982','1983','1984','1985','1986','1987','1988','1989','1990','1991','1992','1993','1994','1995','1996','1997','1998','1999','2000','2001', '2002','2003','2004', '2005','2006','2007', '2008','2009','2010', '2011', '2012','2013','2014','2015','2016','2017', '2018','2019','2020', '2021', '2022'])
 )
 
 JP_line = line_JP.encode(
@@ -140,6 +146,8 @@ line = alt.Chart(df,width=800,height=400).transform_aggregate(
     x = alt.X('Year:N'),
     y = alt.Y('Other_Sales:Q', title='Other region Sales (million $)'),
     color = alt.Color('Genre:N', title='Genre', sort=orderr_oth)
+).transform_filter(
+    alt.FieldOneOfPredicate(field='Year', oneOf=['1980','1981','1982','1983','1984','1985','1986','1987','1988','1989','1990','1991','1992','1993','1994','1995','1996','1997','1998','1999','2000','2001', '2002','2003','2004', '2005','2006','2007', '2008','2009','2010', '2011', '2012','2013','2014','2015','2016','2017', '2018','2019','2020', '2021', '2022'])
 )
 
 Other_line = line.encode(
